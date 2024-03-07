@@ -3,7 +3,6 @@ const Transactions = () => {
     let entradas = 12.000
     let saidas = 3.450
 
-
   return (
     <div className="containerTransactions">
 

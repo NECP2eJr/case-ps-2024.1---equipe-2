@@ -28,7 +28,7 @@ const Header = () => {
       </div>
 
       <button className="btnNewTransaction">
-        <span>Cadastrar nova transação</span>
+        Cadastrar nova transação
       </button>
     </header>
   )

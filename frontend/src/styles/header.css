@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .containerLogo h1 {
@@ -34,7 +35,7 @@
     border: none;
 }
 
-.btnNewTransaction span {
+.btnNewTransaction {
     color: var(--black, #2E2E2E);
     font-feature-settings: 'clig'off, 'liga'off;
     font-family: Amiko;
@@ -42,4 +43,13 @@
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+    border: 1px solid #FFA800;
+    transition: 300ms;
+}
+
+.btnNewTransaction:hover {
+    background-color: transparent;
+    border: 1px solid #FFA800;
+    color: #FFA800;
+    
 }

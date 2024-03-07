@@ -8,8 +8,18 @@ const ListTransactions = () => {
     const [data, setData] = useState(null);
     const [searchParams, setSearchParams] = useState(null);
 
+    
+
     async function GetData() {
         setData(Data);
+    }
+
+    const handleClickSearch = () =>{
+        let filteredData = Data.filter((i:any) => i.description.toLowerCase().includes(searchParams.toLowerCase()) )
+
+        setData(filteredData)
+
+        console.log(filteredData)
     }
 
     useEffect(() => {
@@ -22,9 +32,9 @@ const ListTransactions = () => {
                 <input
                     placeholder="Busque por uma transação"
                     value={null}
-                    onChange={(e) => { setSearchParams(e.target.value); console.log(e.target.value) }}
+                    onChange={(e) => { setSearchParams(e.target.value); }}
                 />
-                <button className="btnSearch">
+                <button className="btnSearch" onClick={()=>handleClickSearch()}>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.0625 3.4375C5.9559 3.4375 3.4375 5.9559 3.4375 9.0625C3.4375 12.1691 5.9559 14.6875 9.0625 14.6875C12.1691 14.6875 14.6875 12.1691 14.6875 9.0625C14.6875 5.9559 12.1691 3.4375 9.0625 3.4375ZM1.5625 9.0625C1.5625 4.92036 4.92036 1.5625 9.0625 1.5625C13.2046 1.5625 16.5625 4.92036 16.5625 9.0625C16.5625 13.2046 13.2046 16.5625 9.0625 16.5625C4.92036 16.5625 1.5625 13.2046 1.5625 9.0625Z" fill="#FFB933" />
@@ -48,7 +58,12 @@ const ListTransactions = () => {
             </table>
             <table className="transactionsList">
                 <tbody>
-                    {data && data.map((item) => {
+                    {data && data.map((item:{
+                        "description":string,
+                        "price":string,
+                        "type":string,
+                        "date":string
+                    }) => {
                         return (
                             <LineItems
                                 description={item.description}

@@ -1,0 +1,160 @@
+.newTransactionModal {
+    width: 535px;
+    height: auto;
+    flex-shrink: 0;
+    position: fixed;
+    border-radius: 6px;
+    background: var(--blue-400, #13273D);
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.80);
+    z-index: 10;
+}
+
+.backgroundModal {
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.transactionModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+
+}
+
+.closeBtn {
+    margin: auto;
+    justify-content: right;
+    text-align: right;
+    margin: 24px 24px 0px 0px;
+}
+
+.closeBtn button {
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.formModal {
+    padding: 0px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 48px;
+}
+
+.headerModal {
+    color: var(--blue-100, #D0D4D8);
+    font-feature-settings: 'clig'off, 'liga'off;
+    font-family: Amiko;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.formModal input {
+    width: 100%;
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    outline: none;
+    border-radius: 6px;
+    background: var(--blue-300-default, #2B3D50);
+    border: none;
+    color: var(--gray, #7C7C8A);
+    font-feature-settings: 'clig'off, 'liga'off;
+    font-family: Amiko;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.itemModalBtns {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.itemModalBtns button {
+    width: 100%;
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: var(--blue-300-default, #2B3D50);
+    border: none;
+    outline: none;
+    color: var(--blue-100, #D0D4D8);
+    font-feature-settings: 'clig'off, 'liga'off;
+    font-family: Amiko;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+
+.btnFinalize {
+    width: 100%;
+}
+
+.btnFinalize button {
+    display: flex;
+    width: 100%;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: var(--orange-200, #FFA800);
+    color: var(--black, #2E2E2E);
+    font-feature-settings: 'clig'off, 'liga'off;
+    font-family: Amiko;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: 1px solid var(--orange-200, #FFA800);
+    cursor: pointer;
+    transition: 300ms;
+
+}
+
+.btnFinalize button:hover {
+    border: 1px solid var(--orange-200, #FFA800);
+    color: white;
+    background-color: transparent;
+}
+
+.itemModalBtns button#selected {
+    border: 1px solid #FFA800;
+
+}
+
+@media screen and (max-width: 1200px) {
+    .newTransactionModal {
+        width: 95%;
+    }
+
+    .itemModalBtns {
+        gap: 5px;
+    }
+}

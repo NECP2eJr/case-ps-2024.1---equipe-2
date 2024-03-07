@@ -139,3 +139,59 @@ table.transactionsList {
     font-weight: 600;
 
 }
+
+@media screen and (max-width: 1200px) {
+    .filterContainer {
+        width: 100%;
+        padding: 40px 0px;
+    }
+
+    .listTransactions {
+        padding: 20px;
+    }
+
+    .searchParams {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .searchParams input {
+        font-size: 15px;
+    }
+
+    .searchParams .btnSearch {
+        padding: 14px 20px;
+        width: 100%;
+    }
+
+    .filterContainer {
+        margin-top: 180px;
+    }
+
+    .tablesTransactions {
+        overflow: auto;
+    }
+
+    .tablesTransactions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .transactionsList {
+        width: 100%;
+    }
+
+
+    .itemListComponent {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 20px 32px;
+        align-items: center;
+        gap: 8px;
+        border-radius: 5px;
+        background: var(--blue-300-default, #2B3D50);
+        margin: 12px 0px;
+    }
+}

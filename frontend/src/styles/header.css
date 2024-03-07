@@ -25,6 +25,15 @@
 }
 
 .btnNewTransaction {
+    color: var(--black, #2E2E2E);
+    font-feature-settings: 'clig'off, 'liga'off;
+    font-family: Amiko;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    border: 1px solid #FFA800;
+    transition: 300ms;
     display: flex;
     padding: 12px 20px;
     justify-content: center;
@@ -36,21 +45,56 @@
     border: none;
 }
 
-.btnNewTransaction {
-    color: var(--black, #2E2E2E);
-    font-feature-settings: 'clig'off, 'liga'off;
-    font-family: Amiko;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    border: 1px solid #FFA800;
-    transition: 300ms;
-}
-
 .btnNewTransaction:hover {
     background-color: transparent;
     border: 1px solid #FFA800;
     color: #FFA800;
-    
+
+}
+
+.btnNewTransactionMobile {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .headerComponent {
+        padding: 20px;
+    }
+
+    .containerLogo svg {
+        width: 100%;
+    }
+
+    .containerLogo h1 {
+        font-size: 23px;
+    }
+
+    .btnNewTransaction {
+        font-size: 15px;
+        padding: 0;
+        line-height: normal;
+        display: none;
+    }
+
+    .btnNewTransactionMobile {
+        color: var(--black, #2E2E2E);
+        font-feature-settings: 'clig'off, 'liga'off;
+        font-family: Amiko;
+        font-size: 26px;
+        color: white;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        border: 1px solid #FFA800;
+        transition: 300ms;
+        display: flex;
+        padding: 12px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 6px;
+        background: var(--orange-200, #FFA800);
+        cursor: pointer;
+        border: none;
+    }
 }

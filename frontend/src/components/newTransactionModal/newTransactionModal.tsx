@@ -1,11 +1,15 @@
 import '../../styles/modal.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-export default function NewTransactionModal({ handleChangeModal }) {
-  const [activeButton, setActiveButton] = useState(null)
-  const [description, setDescription] = useState(null)
-  const [price, setPrice] = useState(null)
-  const [type, setType] = useState(null)
+export default function NewTransactionModal({ handleChangeModal }:any) {
+  const [activeButton, setActiveButton] = useState<string>("")
+  const [description, setDescription] = useState<string>("")
+  const [price, setPrice] = useState<string>("")
+  const [type, setType] = useState<string>("")
+
+  const handleSendData = () =>{
+    console.log(description, price, type)
+  }
 
   return (
     <React.Fragment>
@@ -60,7 +64,7 @@ export default function NewTransactionModal({ handleChangeModal }) {
             </div>
             <div className="itemModalBtns">
               <button
-                id={activeButton === 'Entrada' ? 'selected' : null}
+                id={activeButton === 'Entrada' ? 'selected' : undefined}
                 onClick={() => {
                   setActiveButton('Entrada')
                 }}
@@ -82,7 +86,7 @@ export default function NewTransactionModal({ handleChangeModal }) {
                 Entrada
               </button>
               <button
-                id={activeButton === 'Saida' ? 'selected' : null}
+                id={activeButton === 'Saida' ? 'selected' : undefined}
                 onClick={() => {
                   setActiveButton('Saida')
                 }}
@@ -105,7 +109,7 @@ export default function NewTransactionModal({ handleChangeModal }) {
               </button>
             </div>
             <div className="btnFinalize">
-              <button>Cadastrar</button>
+              <button onClick={() => handleSendData()}>Cadastrar</button>
             </div>
           </div>
         </div>

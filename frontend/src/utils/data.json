@@ -1,0 +1,14 @@
+[
+    {
+        "description": "Desenvolvimento de site",
+        "price": "12.000,00",
+        "type": "Venda",
+        "date": "10/02/2024"
+    },
+    {
+        "description": "Design do site",
+        "price": "- 3.450,00",
+        "type": "Colaborativa",
+        "date": "13/02/2024"
+    }
+]

@@ -1,8 +1,8 @@
-export default function LineItems({ name, price, type, date }) {
+export default function LineItems({ description, price, type, date }) {
     return (
-        <tr>
-            <td>{name}</td>
-            <td>{price}</td>
+        <tr className="itemListComponent">
+            <td>{description}</td>
+            <td id={type === "Venda" ? "vendaId" : "despesaId"}>R$ {price}</td>
             <td>{type}</td>
             <td>{date}</td>
         </tr>

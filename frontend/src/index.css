@@ -40,10 +40,7 @@ body {
 
 .backgroundHeader{
   background: var(--blue-500, #0A141F);
-}
-
-.filterContainer{
-  
+  height: 120px;
 }
 
 

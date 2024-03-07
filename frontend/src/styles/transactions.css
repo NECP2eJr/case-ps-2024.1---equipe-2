@@ -1,9 +1,17 @@
+.containerTransactionsPrincipal {
+  position: relative;
+}
+
 .containerTransactions {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -240px;
 }
 
 .containerMoney {

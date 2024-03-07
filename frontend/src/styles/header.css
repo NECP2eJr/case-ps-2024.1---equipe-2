@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    background-color: var(--blue-500, #0A141F);
 }
 
 .containerLogo {

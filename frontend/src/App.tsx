@@ -1,6 +1,6 @@
-import Header from "./components/header/Header";
-import Transactions from "./components/transactions/Transactions";
-import ListTransactions from "./components/list_transactions/ListTransactions";
+import Header from './components/header/Header'
+import Transactions from './components/transactions/Transactions'
+import ListTransactions from './components/list_transactions/ListTransactions'
 
 export default function App() {
   return (

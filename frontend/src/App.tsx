@@ -1,13 +1,17 @@
 import Header from "./components/header/Header";
-import ListTransactions from "./components/list_transactions/ListTransactions";
 import Transactions from "./components/transactions/Transactions";
+import ListTransactions from "./components/list_transactions/ListTransactions";
 
 export default function App() {
   return (
     <div>
-      <Header />
-      <Transactions/>
-      <ListTransactions />
+      <div className="backgroundHeader">
+        <Header />
+        <Transactions/>
+      </div>
+      <div className="filterContainer">
+        <ListTransactions />
+      </div>
     </div>
   )
 }

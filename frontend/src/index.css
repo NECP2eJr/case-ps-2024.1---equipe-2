@@ -38,5 +38,13 @@ body {
   color: var(--white);
 }
 
+.backgroundHeader{
+  background: var(--blue-500, #0A141F);
+}
+
+.filterContainer{
+  
+}
+
 
 

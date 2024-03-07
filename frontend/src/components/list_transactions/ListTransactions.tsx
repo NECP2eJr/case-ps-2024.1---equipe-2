@@ -58,7 +58,7 @@ const ListTransactions = () => {
             </table>
             <table className="transactionsList">
                 <tbody>
-                    {data && data.map((item:{
+                    {data.length > 0 ? (data.map((item:{
                         "description":string,
                         "price":string,
                         "type":string,
@@ -72,7 +72,12 @@ const ListTransactions = () => {
                                 date={item.date}
                             />
                         )
-                    })}
+                    }
+                    )
+                    ) : (<div>Não existem transações</div>)
+                    }
+
+                    
                 </tbody>
             </table>
         </div>

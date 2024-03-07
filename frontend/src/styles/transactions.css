@@ -1,0 +1,33 @@
+.containerTransactions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.containerMoney {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--blue-300-default, #2b3d50);
+  width: 360px;
+}
+
+.topTextContainerMoney {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: var(--blue-100, #D0D4D8);
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.value{
+    color: var(--white, #FFF);
+font-feature-settings: 'clig' off, 'liga' off;
+/* Heading/5 */
+font-family: Amiko;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 40px; /* 125% */
+}

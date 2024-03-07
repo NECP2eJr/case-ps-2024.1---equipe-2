@@ -21,13 +21,14 @@
   padding-bottom: 10px;
 }
 
-.value{
-    color: var(--white, #FFF);
-font-feature-settings: 'clig' off, 'liga' off;
-/* Heading/5 */
-font-family: Amiko;
-font-size: 32px;
-font-style: normal;
-font-weight: 600;
-line-height: 40px; /* 125% */
+.value {
+  color: var(--white, #FFF);
+  font-feature-settings: 'clig'off, 'liga'off;
+  /* Heading/5 */
+  font-family: Amiko;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  /* 125% */
 }

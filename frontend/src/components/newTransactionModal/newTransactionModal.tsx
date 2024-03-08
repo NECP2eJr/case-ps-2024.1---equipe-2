@@ -10,7 +10,25 @@ export default function NewTransactionModal({ handleChangeModal }: any) {
   const [type, setType] = useState<string>("");
 
   const handleSendData = () => {
-    console.log(description, price, type);
+    
+    let stringData = localStorage.getItem("data")
+    let parsedData = JSON.parse(stringData!)
+
+    if(activeButton != "Entrada"){
+      setPrice(price * -1)
+    }
+
+    parsedData.push({
+      "description": description,
+      "price": price,
+      "type": type,
+      "date": "13/02/2024"
+  })
+
+    let stringDataFinal = JSON.stringify(parsedData)
+
+    localStorage.setItem("data", stringDataFinal)
+
     toast.success('Transação inserida com sucesso!', {
       position: "top-center",
       autoClose: 5000,

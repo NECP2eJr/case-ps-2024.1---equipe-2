@@ -15,7 +15,14 @@ const ListTransactions = () => {
   const [searchParams, setSearchParams] = useState<string>("");
 
   async function GetData() {
-    setData(Data);
+    localStorage.setItem("data", JSON.stringify(Data))
+    let data = localStorage.getItem("data")
+    let data2:DataProps[] = JSON.parse(data!)
+    
+    setData(data2)
+
+    console.log("FETCH DATA")
+
   }
 
   const handleClickSearch = () => {
@@ -110,3 +117,4 @@ const ListTransactions = () => {
 };
 
 export default ListTransactions;
+

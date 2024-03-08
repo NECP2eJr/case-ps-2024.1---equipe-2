@@ -1,8 +1,31 @@
 import '../../styles/transactions.css'
+import Data from "../../utils/data.json"
 
 const Transactions = () => {
-  const entradas = 12000
-  const saidas = 3450
+
+  const total = Data.reduce((accumulator, object) => {
+    console.log(accumulator, object.price)
+    return accumulator + object.price;
+  }, 0);
+
+
+  const entradas = Data.reduce((accumulator, object) => {
+    if(object.price > 0){
+      return accumulator + object.price;
+    }
+    else{
+      return accumulator + 0
+    }
+  }, 0);
+
+  const saidas =Data.reduce((accumulator, object) => {
+    if(object.price < 0){
+      return accumulator - object.price;
+    }
+    else{
+      return accumulator + 0
+    }
+  }, 0);
 
   return (
     <div className="containerTransactionsPrincipal">
@@ -55,7 +78,7 @@ const Transactions = () => {
               </svg>
             </div>
           </div>
-          <div className="value">R$ {entradas - saidas},00</div>
+          <div className="value">R$ {total},00</div>
         </div>
       </div>
     </div>

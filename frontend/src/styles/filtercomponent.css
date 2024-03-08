@@ -194,4 +194,8 @@ table.transactionsList {
         background: var(--blue-300-default, #2B3D50);
         margin: 12px 0px;
     }
+
+    .headerTransactions{
+        display: none;
+    }
 }

@@ -7,6 +7,9 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
   const [price, setPrice] = useState<string>("")
   const [type, setType] = useState<string>("")
 
+
+  
+
   const handleSendData = () =>{
     console.log(description, price, type)
   }

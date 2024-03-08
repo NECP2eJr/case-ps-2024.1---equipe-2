@@ -3,6 +3,9 @@ import Data from "../../utils/data.json"
 
 const Transactions = () => {
 
+
+  
+
   const total = Data.reduce((accumulator, object) => {
     console.log(accumulator, object.price)
     return accumulator + object.price;

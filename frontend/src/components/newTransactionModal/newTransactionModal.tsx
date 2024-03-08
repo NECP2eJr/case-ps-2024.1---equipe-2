@@ -1,27 +1,54 @@
-import '../../styles/modal.css'
-import React, { useState } from 'react'
+import "../../styles/modal.css";
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function NewTransactionModal({ handleChangeModal }:any) {
-  const [activeButton, setActiveButton] = useState<string>("")
-  const [description, setDescription] = useState<string>("")
-  const [price, setPrice] = useState<string>("")
-  const [type, setType] = useState<string>("")
+export default function NewTransactionModal({ handleChangeModal }: any) {
+  const [activeButton, setActiveButton] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [price, setPrice] = useState<number>(0);
+  const [type, setType] = useState<string>("");
 
-
-  
-
-  const handleSendData = () =>{
-    console.log(description, price, type)
-  }
+  const handleSendData = () => {
+    console.log(description, price, type);
+    toast.success('Transação inserida com sucesso!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
 
   return (
     <React.Fragment>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="backgroundModal" onClick={handleChangeModal}></div>
       <div className="transactionModal">
         <div className="newTransactionModal">
           <div className="closeBtn">
             <button onClick={handleChangeModal}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -44,7 +71,7 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
             <div className="itemModalForm">
               <input
                 onChange={(e) => {
-                  setDescription(e.target.value)
+                  setDescription(e.target.value);
                 }}
                 placeholder="Descrição"
               />
@@ -52,7 +79,7 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
             <div className="itemModalForm">
               <input
                 onChange={(e) => {
-                  setPrice(e.target.value)
+                  setPrice(parseFloat(e.target.value));
                 }}
                 placeholder="Preço"
               />
@@ -60,16 +87,16 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
             <div className="itemModalForm">
               <input
                 onChange={(e) => {
-                  setType(e.target.value)
+                  setType(e.target.value);
                 }}
                 placeholder="Categoria"
               />
             </div>
             <div className="itemModalBtns">
               <button
-                id={activeButton === 'Entrada' ? 'selected' : undefined}
+                id={activeButton === "Entrada" ? "selected" : undefined}
                 onClick={() => {
-                  setActiveButton('Entrada')
+                  setActiveButton("Entrada");
                 }}
               >
                 <svg
@@ -89,9 +116,9 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
                 Entrada
               </button>
               <button
-                id={activeButton === 'Saida' ? 'selected' : undefined}
+                id={activeButton === "Saida" ? "selected" : undefined}
                 onClick={() => {
-                  setActiveButton('Saida')
+                  setActiveButton("Saida");
                 }}
               >
                 <svg
@@ -118,5 +145,5 @@ export default function NewTransactionModal({ handleChangeModal }:any) {
         </div>
       </div>
     </React.Fragment>
-  )
+  );
 }

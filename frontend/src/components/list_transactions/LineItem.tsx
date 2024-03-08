@@ -5,7 +5,7 @@ export default function LineItems({
   date,
 }: {
   description: string;
-  price: string;
+  price: number;
   type: string;
   date: string;
 }) {

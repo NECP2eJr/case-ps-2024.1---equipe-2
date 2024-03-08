@@ -1,36 +1,38 @@
-import LineItems from './LineItem'
-import { useState, useEffect } from 'react'
-import Data from '../../utils/data.json'
-import '../../styles/filtercomponent.css'
+import LineItems from "./LineItem";
+import { useState, useEffect } from "react";
+import Data from "../../utils/data.json";
+import "../../styles/filtercomponent.css";
 
 interface DataProps {
-  description: string
-  price: string
-  type: string
-  date: string
+  description: string;
+  price: number;
+  type: string;
+  date: string;
 }
 
 const ListTransactions = () => {
-  const [data, setData] = useState<DataProps[]>([])
-  const [searchParams, setSearchParams] = useState<string>('')
+  const [data, setData] = useState<DataProps[]>([]);
+  const [searchParams, setSearchParams] = useState<string>("");
 
   async function GetData() {
-    setData(Data)
+    setData(Data);
   }
 
   const handleClickSearch = () => {
-    if (searchParams === null) return
+    if (searchParams === null) return;
 
-    const filteredData = Data.filter((i) => i.description.toLowerCase().includes(searchParams.toLowerCase()))
+    const filteredData = Data.filter((i) =>
+      i.description.toLowerCase().includes(searchParams.toLowerCase())
+    );
 
-    setData(filteredData)
+    setData(filteredData);
 
-    console.log(filteredData)
-  }
+    console.log(filteredData);
+  };
 
   useEffect(() => {
-    GetData()
-  }, [])
+    GetData();
+  }, []);
 
   return (
     <div className="listTransactions">
@@ -38,11 +40,17 @@ const ListTransactions = () => {
         <input
           placeholder="Busque por uma transação"
           onChange={(e) => {
-            setSearchParams(e.target.value)
+            setSearchParams(e.target.value);
           }}
         />
         <button className="btnSearch" onClick={() => handleClickSearch()}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -73,17 +81,24 @@ const ListTransactions = () => {
         <table className="transactionsList">
           <tbody>
             {data && data.length > 0 ? (
-              data.map((item: { description: string; price: string; type: string; date: string }) => {
-                return (
-                  <LineItems
-                    key={item.description}
-                    description={item.description}
-                    price={item.price}
-                    type={item.type}
-                    date={item.date}
-                  />
-                )
-              })
+              data.map(
+                (item: {
+                  description: string;
+                  price: number;
+                  type: string;
+                  date: string;
+                }) => {
+                  return (
+                    <LineItems
+                      key={item.description}
+                      description={item.description}
+                      price={item.price}
+                      type={item.type}
+                      date={item.date}
+                    />
+                  );
+                }
+              )
             ) : (
               <div>Não existem transações</div>
             )}
@@ -91,9 +106,7 @@ const ListTransactions = () => {
         </table>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default ListTransactions
-
-
+export default ListTransactions;

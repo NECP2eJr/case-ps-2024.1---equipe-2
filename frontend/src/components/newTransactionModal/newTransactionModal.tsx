@@ -38,7 +38,11 @@ export default function NewTransactionModal({ handleChangeModal }: any) {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+      })
+      
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
   };
 
   return (

@@ -15,13 +15,13 @@ const ListTransactions = () => {
   const [searchParams, setSearchParams] = useState<string>("");
 
   async function GetData() {
-    localStorage.setItem("data", JSON.stringify(Data))
+    if(!localStorage.getItem("data")) {
+        localStorage.setItem("data", JSON.stringify(Data))
+    }
     let data = localStorage.getItem("data")
     let data2:DataProps[] = JSON.parse(data!)
     
     setData(data2)
-
-    console.log("FETCH DATA")
 
   }
 
@@ -33,8 +33,6 @@ const ListTransactions = () => {
     );
 
     setData(filteredData);
-
-    console.log(filteredData);
   };
 
   useEffect(() => {

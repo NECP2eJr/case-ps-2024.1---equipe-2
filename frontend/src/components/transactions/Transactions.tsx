@@ -7,7 +7,7 @@ const Transactions = () => {
   let parsedData: Array<{ price: number, type: string }> = stringData ? JSON.parse(stringData) : [];
 
   const entradas = parsedData.reduce((accumulator, object) => {
-    if (object.price > 0 && object.type == "Entrada") {
+    if (object.type == "Entrada") {
       return accumulator + object.price;
     }
     else {
@@ -16,7 +16,7 @@ const Transactions = () => {
   }, 0);
 
   const saidas = parsedData.reduce((accumulator, object) => {
-    if (object.price < 0 && object.type == "Saida") {
+    if (object.type == "Saida") {
       return accumulator - object.price;
     }
     else {
@@ -24,10 +24,8 @@ const Transactions = () => {
     }
   }, 0);
 
-  const total = parsedData.reduce((accumulator, object) => {
-    console.log(accumulator, object.price)
-    return entradas - saidas;
-  }, 0);
+  const total = entradas + saidas;
+  ;
 
   return (
     <div className="containerTransactionsPrincipal">

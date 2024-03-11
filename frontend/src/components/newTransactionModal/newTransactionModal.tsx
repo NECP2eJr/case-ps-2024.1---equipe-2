@@ -43,7 +43,7 @@ export default function NewTransactionModal({ handleChangeModal }: any) {
       
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1000);
   };
 
   return (

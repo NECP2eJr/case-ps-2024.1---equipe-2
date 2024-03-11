@@ -21,7 +21,8 @@ export default function NewTransactionModal({ handleChangeModal }: any) {
     parsedData.push({
       "description": description,
       "price": price,
-      "type": type,
+      "categoria": type,
+      "type": activeButton,
       "date": "13/02/2024"
   })
 

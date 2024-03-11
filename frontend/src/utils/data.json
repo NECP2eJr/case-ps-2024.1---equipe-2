@@ -2,13 +2,15 @@
     {
         "description": "Desenvolvimento de site",
         "price": 12000,
-        "type": "Venda",
+        "categoria": "Venda",
+        "type": "Entrada",
         "date": "10/02/2024"
     },
     {
         "description": "Design do site",
-        "price": -3450,
-        "type": "Colaborativa",
+        "price": 3450,
+        "categoria": "Colaborativa",
+        "type": "Saida",
         "date": "13/02/2024"
     }
 ]

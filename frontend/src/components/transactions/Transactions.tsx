@@ -3,31 +3,30 @@ import Data from "../../utils/data.json"
 
 const Transactions = () => {
 
+  let stringData: string | null = localStorage.getItem("data");
+  let parsedData: Array<{ price: number, type: string }> = stringData ? JSON.parse(stringData) : [];
 
-  
-
-  const total = Data.reduce((accumulator, object) => {
-    console.log(accumulator, object.price)
-    return accumulator + object.price;
-  }, 0);
-
-
-  const entradas = Data.reduce((accumulator, object) => {
-    if(object.price > 0){
+  const entradas = parsedData.reduce((accumulator, object) => {
+    if (object.price > 0 && object.type == "Entrada") {
       return accumulator + object.price;
     }
-    else{
+    else {
       return accumulator + 0
     }
   }, 0);
 
-  const saidas =Data.reduce((accumulator, object) => {
-    if(object.price < 0){
+  const saidas = parsedData.reduce((accumulator, object) => {
+    if (object.price < 0 && object.type == "Saida") {
       return accumulator - object.price;
     }
-    else{
+    else {
       return accumulator + 0
     }
+  }, 0);
+
+  const total = parsedData.reduce((accumulator, object) => {
+    console.log(accumulator, object.price)
+    return entradas - saidas;
   }, 0);
 
   return (

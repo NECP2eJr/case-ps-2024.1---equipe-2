@@ -6,6 +6,7 @@ import "../../styles/filtercomponent.css";
 interface DataProps {
   description: string;
   price: number;
+  categoria: string;
   type: string;
   date: string;
 }
@@ -26,9 +27,15 @@ const ListTransactions = () => {
   }
 
   const handleClickSearch = () => {
+    if(!localStorage.getItem("data")) {
+        localStorage.setItem("data", JSON.stringify(Data))
+    }
+    let data = localStorage.getItem("data")
+    let data2:DataProps[] = JSON.parse(data!)
+
     if (searchParams === null) return;
 
-    const filteredData = Data.filter((i) =>
+    const filteredData = data2.filter((i) =>
       i.description.toLowerCase().includes(searchParams.toLowerCase())
     );
 
@@ -90,6 +97,7 @@ const ListTransactions = () => {
                 (item: {
                   description: string;
                   price: number;
+                  categoria: string;
                   type: string;
                   date: string;
                 }) => {
@@ -98,6 +106,7 @@ const ListTransactions = () => {
                       key={item.description}
                       description={item.description}
                       price={item.price}
+                      categoria={item.categoria}
                       type={item.type}
                       date={item.date}
                     />
